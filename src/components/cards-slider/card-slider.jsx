@@ -62,7 +62,7 @@ const CardSlider = ({movies}) => {
                     modules={[Autoplay]}
                     className="mySwiper"
                     autoplay={{
-                        delay: 300, // Delay between slides in milliseconds
+                        delay: 3000, // Delay between slides in milliseconds
                         disableOnInteraction: false, // Continue autoplay even after user interaction
                     }}
                     onSlideChange={(swiper) => handleSlideChange(swiper)}
