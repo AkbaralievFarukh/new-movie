@@ -1,12 +1,9 @@
 .header {
   padding: 40px 0;
-  &__container {
+  &__wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1600px;
-    width: 100%;
-    margin: 0 auto;
   }
   &__logo {
     &__link {
@@ -33,9 +30,18 @@
     display: flex;
     align-items: center;
     gap: 64px;
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
     &__link {
       color: #fff;
       font-size: 18px;
+    }
+  }
+  &__burger {
+    display: none;
+    @media screen and (max-width: 768px) {
+      display: block;
     }
   }
 }

@@ -1,10 +1,11 @@
 import React from 'react';
 import './styles.scss'
+import {CiMenuBurger} from "react-icons/ci";
 
 const Header = () => {
     return (
         <header className={'header'}>
-            <div className={'header__container'}>
+            <div className={'container header__wrapper'}>
                 <div className={'header__logo'}>
                     <a href="#" className={'header__logo__link'}>
                         <span>new</span>
@@ -30,6 +31,7 @@ const Header = () => {
                         </li>
                     </ul>
                 </nav>
+                <CiMenuBurger className={'header__burger'} size={30} color={'white'} />
             </div>
         </header>
     );
