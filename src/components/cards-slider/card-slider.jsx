@@ -59,7 +59,7 @@ const CardSlider = ({movies}) => {
                     {
                         movies.map((movie, i) => (
                             <SwiperSlide key={i}>
-                                {<img src={`${poster_url}${movie.poster_path}`} alt=""/>}
+                                {<img src={`${poster_url}${movie.poster_path}`} alt={movie.original_title}/>}
                             </SwiperSlide>
                         ))
                     }
