@@ -9,7 +9,6 @@ const App = () => {
     useEffect(() => {
         fetchMovies()
     }, [fetchMovies]);
-    console.log(movies)
     return (
         <div>
             <Header />

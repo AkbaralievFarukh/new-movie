@@ -1,6 +1,8 @@
 .swiper {
   width: 100%;
-  margin-top: 50px;
+  &-wrapper {
+    gap: 30px;
+  }
 }
 
 .swiper-slide {
@@ -14,6 +16,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 12px;
   &-active {
     img {
       opacity: 1!important;
@@ -27,4 +30,5 @@
   height: 100%;
   object-fit: contain;
   opacity: 0.5;
+  border-radius: 12px;
 }
