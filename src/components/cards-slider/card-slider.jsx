@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 // Import Swiper React components
 import {Swiper, SwiperSlide} from 'swiper/react';
 
@@ -25,6 +25,22 @@ const CardSlider = ({movies}) => {
             setActiveMovieIndex(swiper.activeIndex);
         }
     };
+    useEffect(() => {
+        const updateBackgroundImage = () => {
+            document.body.style.backgroundImage = `linear-gradient(to right, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%), url(${
+                activeMovieIndex < movies.length &&
+                movies[activeMovieIndex].backdrop_path
+                    ? `${backdrop_url}${movies[activeMovieIndex].backdrop_path}`
+                    : ''
+            })`;
+        };
+
+        updateBackgroundImage();
+
+        return () => {
+            document.body.style.backgroundImage = ''; // Очистить фоновое изображение при размонтировании компонента
+        };
+    }, [activeMovieIndex, movies]);
     return (
         movies ? (
             <>
@@ -48,18 +64,6 @@ const CardSlider = ({movies}) => {
                         ))
                     }
                 </Swiper>
-                <style>
-                    {`
-                  body {
-                    background: linear-gradient(to right, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%), url(${activeMovieIndex < movies.length && movies[activeMovieIndex].backdrop_path ? `${backdrop_url}${movies[activeMovieIndex].backdrop_path}` : ''});
-                    background-size: cover;
-                    background-repeat: no-repeat;
-                    background-position: center;
-                    transition: background-image 0.5s ease-in-out;
-                    height: 100vh;
-                  }
-                `}
-                </style>
             </>
         ) : null
     );
