@@ -46,15 +46,9 @@ const CardSlider = ({movies}) => {
             <>
                 <CardSliderInfo movie={movies[activeMovieIndex]}/>
                 <Swiper
-                    modules={[Autoplay]}
-                    className="mySwiper"
-                    autoplay={{
-                        delay: 3000, // Delay between slides in milliseconds
-                        disableOnInteraction: false, // Continue autoplay even after user interaction
-                    }}
                     breakpoints={
                         {
-                            425: {
+                            320: {
                                 slidesPerView: 3
                             },
                             768: {
@@ -65,8 +59,13 @@ const CardSlider = ({movies}) => {
                             }
                         }
                     }
+                    modules={[Autoplay]}
+                    className="mySwiper"
+                    autoplay={{
+                        delay: 300, // Delay between slides in milliseconds
+                        disableOnInteraction: false, // Continue autoplay even after user interaction
+                    }}
                     onSlideChange={(swiper) => handleSlideChange(swiper)}
-                    onSlideChangeTransitionEnd={(swiper) => handleSlideChangeTransitionEnd(swiper)}
                 >
                     {
                         movies.map((movie, i) => (
