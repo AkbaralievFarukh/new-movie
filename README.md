@@ -1,8 +1,37 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Movie React Project - [View link](https://akbaralievfarukh-movie.netlify.app/)
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+## Screenshots
+
+![App Screenshot](https://img001.prntscr.com/file/img001/Es3OTUZZQimgeg1MHLC2PA.png)
+
+
+## Demo
+
+https://akbaralievfarukh-movie.netlify.app/
+
+
+## Features
+
+- Beautiful design
+- Live previews
+- Fullscreen mode
+
+
+
+## Authors
+
+- [@AkbaralievFarukh](https://github.com/AkbaralievFarukh)
+
+
+## Tech Stack
+
+**Client:** React, Zustand, Scss, Axios
+
+**Api:** [TMDB](https://www.themoviedb.org/)
+## Roadmap
+
+- Add home page
+
