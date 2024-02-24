@@ -11,9 +11,6 @@ body {
   width: 100%;
   position: absolute;
   bottom: 80px;
-  @media screen and (max-width: 425px) {
-    bottom: 40px;
-  }
   &-wrapper {
     gap: 30px;
     @media screen and (max-width: 425px) {
