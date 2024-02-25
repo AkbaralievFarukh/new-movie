@@ -2,7 +2,6 @@ import React, {useEffect} from 'react';
 import {useParams} from "react-router-dom";
 import useStore from "../../store/store.js";
 import {backdrop_url, poster_url} from "../../api/config.js";
-import 'boxicons'
 import './styles.scss'
 
 const Movie = () => {
