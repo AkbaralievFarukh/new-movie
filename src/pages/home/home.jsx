@@ -10,11 +10,8 @@ const Home = () => {
         fetchMovies()
     }, [fetchMovies]);
 
-    return (
-        <Layout>
-            <CardSlider movies={movies}/>
-        </Layout>
-    )
+    return <CardSlider movies={movies}/>
+
 };
 
 export default Home;

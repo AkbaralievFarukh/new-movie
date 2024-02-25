@@ -11,6 +11,7 @@ import './styles.scss';
 import {Autoplay} from 'swiper/modules';
 import {backdrop_url, poster_url} from "../../api/config.js";
 import CardSliderInfo from "../card-slider-info/card-slider-info.jsx";
+import {Link} from "react-router-dom";
 
 
 const CardSlider = ({movies}) => {
@@ -70,7 +71,11 @@ const CardSlider = ({movies}) => {
                     {
                         movies.map((movie, i) => (
                             <SwiperSlide key={i}>
-                                {<img src={`${poster_url}${movie.poster_path}`} alt={movie.original_title}/>}
+                                {
+                                    <Link to={`/movie/${movie.id}`}>
+                                        <img src={`${poster_url}${movie.poster_path}`} alt={movie.original_title}/>
+                                    </Link>
+                                }
                             </SwiperSlide>
                         ))
                     }

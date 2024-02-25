@@ -12,9 +12,22 @@ ul {
   list-style: none;
 }
 
+img {
+  width: 100%;
+}
+
 .container {
   max-width: 1600px;
   padding: 0 20px;
   width: 100%;
   margin: 0 auto;
+}
+
+.imdb {
+  color: black;
+  background: #F5C51C;
+  font-size: 14px;
+  padding: 5px;
+  font-weight: bold;
+  border-radius: 4px;
 }

@@ -13,14 +13,6 @@
     display: flex;
     align-items: center;
     gap: 8px;
-    &__logo {
-      color: black;
-      background: #F5C51C;
-      font-size: 14px;
-      padding: 5px;
-      font-weight: bold;
-      border-radius: 4px;
-    }
     &__vote {
       font-weight: 500;
       &-count {

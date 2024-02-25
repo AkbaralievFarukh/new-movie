@@ -1,14 +1,15 @@
 import React, {Fragment} from 'react';
 import Header from "../header/header.jsx";
+import {Outlet} from "react-router-dom";
 
-const Layout = ({ children }) => {
+const Layout = () => {
     return (
-        <Fragment>
+        <>
             <Header />
             <main>
-                {children}
+                <Outlet />
             </main>
-        </Fragment>
+        </>
     );
 };
 
