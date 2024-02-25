@@ -1,19 +1,14 @@
 import React, {useEffect} from 'react';
-import Header from "./components/header/header.jsx";
-import useStore from "./store/store.js";
-import CardSlider from "./components/cards-slider/card-slider.jsx";
+import {Route, Routes} from "react-router-dom";
+import Home from "./pages/home/home.jsx";
+import Layout from "./components/layout/layout.jsx";
 
 const App = () => {
-    const  {movies, fetchMovies} = useStore()
 
-    useEffect(() => {
-        fetchMovies()
-    }, [fetchMovies]);
     return (
-        <div>
-            <Header />
-            <CardSlider movies={movies} />
-        </div>
+        <Routes>
+            <Route path={'/'} element={<Layout><Home/></Layout>} />
+        </Routes>
     );
 };
 
