@@ -9,8 +9,8 @@ const useStore = create((set) => ({
         const { data: { results } } = await axios.get(`${url}discover/movie?page=1&api_key=${api_key}`);
         set({ movies: results });
     },
-    fetchMovieById: async () => {
-        const { data } = await axios.get(`${url}movie/23521?api_key=${api_key}`)
+    fetchMovieById: async (id) => {
+        const { data } = await axios.get(`${url}movie/${id}?api_key=${api_key}`)
         set( {movie: data})
     }
 }));
