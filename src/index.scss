@@ -16,6 +16,15 @@ img {
   width: 100%;
 }
 
+body {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: background-image 0.5s ease-in-out;
+  min-height: 100vh;
+  position: relative;
+}
+
 .container {
   max-width: 1600px;
   padding: 0 20px;
