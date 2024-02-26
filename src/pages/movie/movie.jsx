@@ -3,17 +3,19 @@ import {useParams} from "react-router-dom";
 import useStore from "../../store/store.js";
 import {backdrop_url, poster_url} from "../../api/config.js";
 import './styles.scss'
+import YoutubeButton from "../../components/youtube-button/youtube-button.jsx";
 
 const Movie = () => {
     const {id} = useParams()
-    const {movie, fetchMovieById, isLoading, clearMovie} = useStore()
+    const {movie, fetchMovieById, isLoading, clearMovie, movieTrailers, fetchmovieTrailers} = useStore()
 
     useEffect(() => {
         fetchMovieById(id); // Pass the 'id' parameter
+        fetchmovieTrailers(id)
         return () => {
             clearMovie(); // Вызывается при размонтировании компонента для очистки объекта
         };
-    }, [id, fetchMovieById, clearMovie]);
+    }, [id, fetchMovieById, fetchmovieTrailers, clearMovie]);
 
     useEffect(() => {
         const updateBackgroundImage = () => {
@@ -32,6 +34,9 @@ const Movie = () => {
     }, [movie]);
     console.log(movie)
     console.log(id)
+    const trailer = movieTrailers.find(item => item.type === "Trailer");
+    console.log(trailer)
+
     return (
         isLoading ? <div>Loading...</div> : (
             movie ? (
@@ -45,6 +50,7 @@ const Movie = () => {
                                 <span className={'imdb'}>IMDb</span>
                                 <span>{movie.vote_average}</span>
                             </div>
+                            <YoutubeButton videoKey={trailer && trailer.key} />
                         </div>
                     </div>
                 </div>
