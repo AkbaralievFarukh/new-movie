@@ -34,4 +34,5 @@ https://akbaralievfarukh-movie.netlify.app/
 ## Roadmap
 
 - Add home page
+- Add movie page
 
