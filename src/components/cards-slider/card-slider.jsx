@@ -44,7 +44,7 @@ const CardSlider = ({movies}) => {
     }, [activeMovieIndex, movies]);
     return (
         movies ? (
-            <>
+            <div className={'home-page__wrapper'}>
                 <CardSliderInfo movie={movies[activeMovieIndex]}/>
                 <Swiper
                     breakpoints={
@@ -80,7 +80,7 @@ const CardSlider = ({movies}) => {
                         ))
                     }
                 </Swiper>
-            </>
+            </div>
         ) : null
     );
 };

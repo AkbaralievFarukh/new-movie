@@ -1,7 +1,5 @@
 .swiper {
   width: 100%;
-  position: absolute;
-  bottom: 80px;
   &-wrapper {
     gap: 30px;
     @media screen and (max-width: 425px) {
