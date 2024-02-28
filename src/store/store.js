@@ -6,6 +6,7 @@ const useStore = create((set) => ({
     movies: [],
     movie: {},
     movieTrailers: [],
+    credits: [],
     isLoading: false,
     fetchMovies: async () => {
         set({ isLoading: true });
@@ -21,6 +22,15 @@ const useStore = create((set) => ({
         set({isLoading: true})
         const {data: { results }} = await  axios.get(`https://api.themoviedb.org/3/movie/${id}/videos?api_key=${api_key}`)
         set( {movieTrailers: results, isLoading: false })
+    },
+    fetchCredits: async (id) => {
+        set({isLoading: true})
+        const {
+            data: {
+                cast,
+            }
+        } = await axios.get(`https://api.themoviedb.org/3/movie/${id}/credits?api_key=${api_key}`)
+        set({credits: cast, isLoading: false})
     },
     clearMovie: () => {
         set({ movie: {} });
