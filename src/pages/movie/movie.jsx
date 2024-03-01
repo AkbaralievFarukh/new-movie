@@ -8,11 +8,11 @@ import YoutubeButton from "../../components/youtube-button/youtube-button.jsx";
 const Movie = () => {
     const {id} = useParams()
     const {movie, fetchMovieById, isLoading, clearMovie, movieTrailers, fetchmovieTrailers, credits, fetchCredits} = useStore()
-
     useEffect(() => {
         fetchMovieById(id); // Pass the 'id' parameter
         fetchmovieTrailers(id)
         fetchCredits(id)
+
         return () => {
             clearMovie(); // Вызывается при размонтировании компонента для очистки объекта
         };
@@ -30,14 +30,10 @@ const Movie = () => {
         updateBackgroundImage();
 
         return () => {
-            document.body.style.backgroundImage = '';
+                document.body.style.backgroundImage = '';
         };
     }, [movie]);
-    console.log(movie)
-    console.log(id)
     const trailer = movieTrailers.find(item => item.type === "Trailer");
-    console.log(trailer)
-    console.log(credits)
 
     return (
         isLoading ? <div>Loading...</div> : (
@@ -53,23 +49,23 @@ const Movie = () => {
                                 <span>{movie.vote_average}</span>
                             </div>
                             <YoutubeButton videoKey={trailer && trailer.key} />
-                            <div className={'movie__info__cast'}>
-                                {
-                                    credits && credits && credits.length > 0
-                                     ? credits.filter((item) => item.profile_path !== null).map((item, index) => {
-                                            return (
-                                                <div className={'movie__info__cast__item'} key={index}>
-                                                    <img className={'movie__info__cast__item__img'} src={poster_url + item.profile_path} alt={item.name} />
-                                                    <div className={'movie__info__cast__item__info'}>
-                                                        <h3 className={'movie__info__cast__item__info__name'}>{item.name}</h3>
-                                                        <p className={'movie__info__cast__item__info__character'}>{item.character}</p>
-                                                    </div>
-                                                </div>
-                                            )
-                                        })
-                                        : null
-                                }
-                            </div>
+                            {/*<div className={'movie__info__cast'}>*/}
+                            {/*    {*/}
+                            {/*        credits && credits && credits.length > 0*/}
+                            {/*         ? credits.filter((item) => item.profile_path !== null).map((item, index) => {*/}
+                            {/*                return (*/}
+                            {/*                    <div className={'movie__info__cast__item'} key={index}>*/}
+                            {/*                        <img className={'movie__info__cast__item__img'} src={poster_url + item.profile_path} alt={item.name} />*/}
+                            {/*                        <div className={'movie__info__cast__item__info'}>*/}
+                            {/*                            <h3 className={'movie__info__cast__item__info__name'}>{item.name}</h3>*/}
+                            {/*                            <p className={'movie__info__cast__item__info__character'}>{item.character}</p>*/}
+                            {/*                        </div>*/}
+                            {/*                    </div>*/}
+                            {/*                )*/}
+                            {/*            })*/}
+                            {/*            : null*/}
+                            {/*    }*/}
+                            {/*</div>*/}
                         </div>
                     </div>
                 </div>

@@ -1,11 +1,9 @@
 .movie {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 48px;
   background: rgba( 0, 0, 0, 0.35 );
   box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-  backdrop-filter: blur( 3px );
-  -webkit-backdrop-filter: blur( 3px );
   border-radius: 16px;
   padding: 20px 40px;
   color: #fff;
@@ -20,11 +18,7 @@
   }
   &__poster {
     border-radius: 16px;
-    min-width: 300px;
-    @media screen and (max-width: 768px) {
-      max-width: 300px;
-      min-width: unset;
-    }
+    max-width: 300px;
   }
   &__info {
     display: flex;
@@ -42,40 +36,6 @@
       display: flex;
       align-items: center;
       gap: 8px;
-    }
-    &__cast {
-      display: flex;
-      gap: 16px;
-      flex-wrap: nowrap;
-      overflow-x: auto;
-      &::-webkit-scrollbar {
-        height: 8px;
-      }
-
-      &::-webkit-scrollbar-thumb {
-        background-color: #888;
-        border-radius: 4px;
-      }
-
-      &::-webkit-scrollbar-track {
-        background-color: transparent;
-      }
-      &__item {
-        width: 100px;
-        flex-shrink: 0;
-        &__img {
-          border-radius: 16px;
-        }
-        &__info {
-          &__name {
-            font-weight: 600;
-            font-size: 14px;
-          }
-          &__character {
-            font-size: 12px;
-          }
-        }
-      }
     }
   }
 }
